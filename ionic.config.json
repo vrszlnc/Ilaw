@@ -1,0 +1,7 @@
+{
+  "name": "Ilaw",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
