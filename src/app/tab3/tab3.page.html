@@ -1,17 +1,30 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Tab 3
+      Light Settings
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <div class="color-container">
+    <ion-card class="color-picker-container">
+      <ion-card-header>
+        <ion-card-title>Choose Color</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <input class="colorpicker" type="color" id="colorPicker" (input)="updateColor($event)">
+        <div class="color-display" id="colorDisplay"></div>
+      </ion-card-content>
+    </ion-card>
+  </div>
+  <div class="brightness-level">
+    <div class="brightness-icon">
+      <ion-icon class="icon ion-md-sunny"></ion-icon>
+    </div>
 
-  <app-explore-container name="Tab 3 page"></app-explore-container>
+    <label class="slider">
+      <input type="range" class="level" />
+    </label>
+  </div>
 </ion-content>
