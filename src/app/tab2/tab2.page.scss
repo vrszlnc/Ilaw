@@ -1,5 +1,119 @@
-ion-title{
+/* level settings */
+
+ion-title {
     align-items: center;
     justify-content: center;
     text-align: center;
+}
+
+ion-content {
+    display: block;
+}
+
+.brightness-level {
+    align-items: start;
+    justify-content: center;
+    text-align: center;
+    height: 20%;
+    width: 100%;
+    display: inline-flex;
+    margin-top: 50px;
+
+    .slider {
+        /* slider */
+
+        --slider-width: 200px;
+        --slider-height: 50px;
+        --slider-bg: rgb(82, 82, 82);
+        --slider-border-radius: 13px;
+        /* level */
+        --level-color: #fff;
+        --level-transition-duration: 0.1s;
+
+        position: relative;
+        cursor: pointer;
+        display: -webkit-inline-box;
+        display: -ms-inline-flexbox;
+        display: inline-flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+
+        .level {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            width: var(--slider-width);
+            height: var(--slider-height);
+            background: var(--slider-bg);
+            overflow: hidden;
+            border-radius: var(--slider-border-radius);
+            cursor: inherit;
+        }
+
+        .level::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 0;
+            height: 0;
+            -webkit-box-shadow: -200px 0 0 200px var(--level-color);
+            box-shadow: -200px 0 0 200px var(--level-color);
+        }
+
+
+
+    }
+
+    .brightness-icon {
+        font-size: 40px;
+        margin-right: 20px;
+    }
+}
+
+.color-container {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+
+    .color-picker-container {
+
+        justify-content: center;
+        display: block;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        width: fit-content;
+        height: fit-content;
+        background-color: transparent;
+        border-color: transparent;
+        margin-top: 20px;
+
+        ion-card-title {
+            justify-content: center;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            font-size: 40px;
+            font-weight: 700;
+        }
+
+        .color-display {
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+            border-radius: 50%;
+            background-color: #cccccc;
+            border: 2px solid #333;
+        }
+
+        .colorpicker {
+            width: 100px;
+            border: none;
+        }
+    }
 }
