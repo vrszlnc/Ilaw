@@ -1,22 +1,20 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Light Settings
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
 
 <ion-content [fullscreen]="true">
+  <body>
   <div class="color-container">
-    <ion-card class="color-picker-container">
-      <ion-card-header>
-        <ion-card-title>Choose Color</ion-card-title>
-      </ion-card-header>
+    <div class="color-picker-container">
+      <div class="header-title">
+        <h1>Choose Color</h1>
+      </div>
       <ion-card-content>
         <input class="colorpicker" type="color" id="colorPicker" (input)="updateColor($event)">
         <div class="color-display" id="colorDisplay"></div>
       </ion-card-content>
-    </ion-card>
+    </div>
   </div>
   <div class="brightness-level">
     <div class="brightness-icon">
@@ -27,4 +25,5 @@
       <input type="range" class="level" />
     </label>
   </div>
+</body>
 </ion-content>

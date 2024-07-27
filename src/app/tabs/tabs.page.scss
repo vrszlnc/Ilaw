@@ -1,4 +1,13 @@
 
+ion-title {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: "Archivo Black", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
 ion-label {
     margin-top: 5px;
   }
@@ -15,3 +24,13 @@ ion-tab-button:active + ion-icon{
       margin-top: -10px;
 
     }
+
+ion-toolbar{
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.322);
+  background-color: rgb(0, 0, 0);
+}
+
+
+.header{
+  background-color: rgb(146, 144, 144);
+}
