@@ -1,1 +1,17 @@
 
+ion-label {
+    margin-top: 5px;
+  }
+
+ion-tab-button:hover{
+transition: 0.1s;
+  position: relative;
+  margin-top: -10px;
+  opacity: 100%;
+}
+
+ion-tab-button:active + ion-icon{
+    background-color: aqua;
+      margin-top: -10px;
+
+    }
