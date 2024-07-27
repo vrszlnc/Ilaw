@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonCardHeader, IonCardTitle, IonCardContent, IonCard } from '@ionic/angular/standalone';
-
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 
 @Component({
