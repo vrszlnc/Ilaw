@@ -1,14 +1,14 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+<ion-header>
+  <ion-toolbar>
+    <ion-title>LED Control</ion-title>
+  </ion-toolbar>
+</ion-header>
 
-<ion-content [fullscreen]="true" >
-  <body>
-
+<ion-content [fullscreen]="true">
   <div class="switch-button">
     <h1>Power Button</h1>
     <div class="switch-container">
-      <input id="checkbox" type="checkbox" />
+      <input id="checkbox" type="checkbox" (ionChange)="togglePower($event)" />
       <label class="switch" for="checkbox">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="slider">
           <path
@@ -16,22 +16,14 @@
           </path>
         </svg>
       </label>
-
     </div>
-   
-
     <div class="brightness-level">
-      
-  
       <label class="slider">
-        <input type="range" class="level" />
+        <input type="range" min="0" max="255" class="level" [(ngModel)]="brightness" (ionChange)="setBrightness()" />
       </label>
       <div class="brightness-icon">
         <ion-icon class="icon ion-md-sunny"></ion-icon>
       </div>
     </div>
   </div>
-
-  
-</body>
 </ion-content>
