@@ -8,7 +8,7 @@
   <div class="switch-button">
     <h1>Power Button</h1>
     <div class="switch-container">
-      <input id="checkbox" type="checkbox" (ionChange)="togglePower($event)" />
+      <input id="checkbox" type="checkbox" />
       <label class="switch" for="checkbox">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="slider">
           <path
@@ -19,7 +19,7 @@
     </div>
     <div class="brightness-level">
       <label class="slider">
-        <input type="range" min="0" max="255" class="level" [(ngModel)]="brightness" (ionChange)="setBrightness()" />
+        <input type="range" min="0" max="255" class="level"  />
       </label>
       <div class="brightness-icon">
         <ion-icon class="icon ion-md-sunny"></ion-icon>
@@ -27,3 +27,7 @@
     </div>
   </div>
 </ion-content>
+
+
+<!-- [(ngModel)]="brightness" (ionChange)="setBrightness()"
+(ionChange)="togglePower($event)" / -->

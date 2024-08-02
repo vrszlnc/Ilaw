@@ -1,20 +1,19 @@
 import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonCardHeader, IonCardTitle, IonCardContent, IonCard } from '@ionic/angular/standalone';
+import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonPopover, IonIcon } from '@ionic/angular/standalone';
 import { ExploreContainerComponent } from '../explore-container/explore-container.component';
 import { ToastController } from '@ionic/angular';
-import { SerialCommunicationService } from '../serial-communication.service';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonCard, IonCardContent, IonCardTitle, IonCardHeader, IonIcon, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  imports: [IonIcon, IonPopover, IonButton, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
 })
 export class Tab1Page {
-  brightness: number = 128;
+  switchState: boolean = false;
 
-  constructor(private toastController: ToastController, private serialService: SerialCommunicationService) {}
+  constructor(private toastController: ToastController) {}
 
   async presentToast(position: 'top') {
     const toast = await this.toastController.create({
@@ -26,37 +25,15 @@ export class Tab1Page {
     await toast.present();
   }
 
-  ionViewDidEnter() {
-    this.serialService.connect().then(() => {
-      console.log('Connected to Arduino');
-    }).catch((error) => {
-      console.error('Error connecting to Arduino', error);
-    });
+  toggleSwitch(event: any) {
+    this.switchState = event.target.checked;
+    const command = this.switchState ? 'on' : 'off';
+    this.sendCommandToEsp8266(command);
   }
 
-  turnOn() {
-    this.serialService.sendCommand('ON').then(() => {
-      console.log('LED turned on');
-    });
-  }
-
-  turnOff() {
-    this.serialService.sendCommand('OFF').then(() => {
-      console.log('LED turned off');
-    });
-  }
-
-  setBrightness() {
-    this.serialService.sendCommand(`BRIGHTNESS:${this.brightness}`).then(() => {
-      console.log('LED brightness set to', this.brightness);
-    });
-  }
-
-  ionViewWillLeave() {
-    this.serialService.disconnect().then(() => {
-      console.log('Disconnected from Arduino');
-    }).catch((error) => {
-      console.error('Error disconnecting from Arduino', error);
-    });
+  sendCommandToEsp8266(command: string) {
+    // Replace with your actual service method call
+    console.log(`Command sent to ESP8266: ${command}`);
+    // You can add your Esp8266Service here to send the command
   }
 }
