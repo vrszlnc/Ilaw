@@ -1,39 +1,44 @@
-import { Component } from '@angular/core';
-import { IonHeader, IonToolbar, IonTitle, IonContent, IonButton, IonPopover, IonIcon } from '@ionic/angular/standalone';
-import { ExploreContainerComponent } from '../explore-container/explore-container.component';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ToastController } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+
+import { DataService } from '../provider/data.service';
 
 @Component({
   selector: 'app-tab1',
   templateUrl: 'tab1.page.html',
   styleUrls: ['tab1.page.scss'],
   standalone: true,
-  imports: [IonIcon, IonPopover, IonButton, IonHeader, IonToolbar, IonTitle, IonContent, ExploreContainerComponent],
+  imports: [IonicModule, FormsModule, CommonModule] // Ensure FormsModule is imported
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
   switchState: boolean = false;
+  brightness: number = 128; // Default brightness level
 
-  constructor(private toastController: ToastController) {}
+  constructor(
+    private toastController: ToastController,
+    private ds: DataService
+  ) {}
 
-  async presentToast(position: 'top') {
-    const toast = await this.toastController.create({
-      message: 'Hello World!',
-      duration: 1500,
-      position: position,
+  ngOnInit(): void {
+
+  }
+
+  toggleswitch(event: any) {
+    alert("hi")
+  }
+
+  pindot(){
+    this.switchState = !this.switchState;
+    console.log('Switch state after pindot:', this.switchState);
+    this.ds.getRequest(13).subscribe((response: any) => {
+      console.log(response);
     });
-
-    await toast.present();
   }
 
-  toggleSwitch(event: any) {
-    this.switchState = event.target.checked;
-    const command = this.switchState ? 'on' : 'off';
-    this.sendCommandToEsp8266(command);
-  }
-
-  sendCommandToEsp8266(command: string) {
-    // Replace with your actual service method call
-    console.log(`Command sent to ESP8266: ${command}`);
-    // You can add your Esp8266Service here to send the command
+  setBrightness() {
+    throw new Error('Method not implemented.');
   }
 }
