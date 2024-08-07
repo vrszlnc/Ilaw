@@ -2,20 +2,28 @@
   <ion-toolbar>
     <ion-title>LED Control</ion-title>
   </ion-toolbar>
+ 
+
 </ion-header>
 
 
-<ion-content [fullscreen]="true">
-  <div class="container">
-    <div class="button-wrapper">
-      <ion-button expand="full" (click)="pindot()" class="power-button">
+
+ <ion-content [fullscreen]="true">
+ 
+   <div class="container">
+    <!-- <div class="button-wrapper"> -->
+      <!-- <ion-button expand="full" (click)="pindot()" class="power-button"> -->
+        <div class="pat">
+          <ion-button (click)="pindot()">
+            <span>Power</span>
+          </ion-button>
+        
+        
        
-        <span>Power</span>
-      </ion-button>
       <ion-text color="light" class="subtitle">
         <h2>Activate the Power</h2>
         <p>Press the button to turn on/off the device.</p>
       </ion-text>
     </div>
-  </div>
+    </div>
 </ion-content>

@@ -30,18 +30,19 @@
 }
 
 /* Button wrapper styling */
-.button-wrapper {
+.pat {
   text-align: center;
+ 
 }
   /* Power button styling */
-.power-button {
+ion-button {
   --background: #ff5722; /* Button background color */
   --color: #fff; /* Button text color */
-  --border-radius: 50px; /* Rounded corners for a pill shape */
-  --padding-start: 20px;
-  --padding-end: 20px;
+  --border-radius: 7px; /* Rounded corners for a pill shape */
+  --padding-start: 70px;
+  --padding-end: 70px;
   font-size: 18px; /* Larger font size */
-  height: 60px; /* Increase button height */
+  height: 40px; /* Increase button height */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
   transition: transform 0.2s, box-shadow 0.2s; /* Smooth transitions */
   
